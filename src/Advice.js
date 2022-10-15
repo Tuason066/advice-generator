@@ -14,13 +14,16 @@ function Advice() {
   return (
     <main className='grid min-h-screen min-w-full bg-neutral-300 font-manrope place-items-center pt-12 pb-16'>
       <article className='bg-neutral-200 w-11/12 max-w-sm md:max-w-lg rounded-xl text-center text-sm md:text-base font-bold relative'>
-        <div className='p-6 md:p-12 '>
+        <blockquote
+          cite='https://api.adviceslip.com/advice'
+          className='p-6 md:p-12 '
+        >
           <h1 className='text-primary-200 tracking-widest mb-4'>
             Advice #{advice.id}
           </h1>
-          <h2 className='text-primary-100 text-base md:text-3xl'>
-            <q>{advice.advice}</q>
-          </h2>
+          <q className='text-primary-100 text-base md:text-3xl'>
+            {advice.advice}
+          </q>
           <picture className='py-8 md:pb-4 block'>
             <source
               media='(min-width:768px)'
@@ -32,7 +35,7 @@ function Advice() {
               alt='dice'
             />
           </picture>
-        </div>
+        </blockquote>
         <button
           onClick={() => fetchAdvice()}
           ref={dice}
